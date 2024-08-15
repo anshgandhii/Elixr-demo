@@ -36,3 +36,8 @@ body {
     margin-left: 260px;
     padding: 20px;
 }
+
+.chat_area{
+    display: flex;
+    height: 100vh; 
+}

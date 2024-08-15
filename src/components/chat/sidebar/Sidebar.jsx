@@ -17,7 +17,7 @@ export default function Sidebar() {
   });
 
   return (
-    <div >
+    <div className="chat_area" data-theme="cupcake">
         <div class="sidebar " data-theme="retro">
         <a href="#home">Home</a>
         <a href="#services">Services</a>
