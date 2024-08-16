@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import "./Sidebar.css";
+import Video_Area from '../video_area/Video_Area';
+import Chat_area from "../chat_area/chat_area";
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false); // Sidebar is hidden initially
@@ -17,17 +19,20 @@ export default function Sidebar() {
   });
 
   return (
-    <div className="chat_area" data-theme="cupcake">
-        <div class="sidebar " data-theme="retro">
-        <a href="#home">Home hello</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+    <div className="container">
+        <div class="sidebar " data-theme="synthwave">
+        <a href="#home" className="m-4" data-theme="cyberpunk">Home </a>
+        <a href="#services "className="m-4" data-theme="cyberpunk">Services</a>
+        <a href="#about" className="m-4" data-theme="cyberpunk">About</a>
+        <a href="#contact" className="m-4" data-theme="cyberpunk">Contact</a>
         </div>
 
-        <div class="content" data-theme="synthwave">
-        <h1>Main Content Area</h1>
-        <p>This is where your main content goes. The sidebar is fixed on the left and will stay visible while you scroll.</p>
+        <div className="video" data-theme="synthwave">
+          <Video_Area />
+        </div>
+
+        <div className="chat_area "data-theme="synthwave">
+          <Chat_area />
         </div>
     </div>
   );

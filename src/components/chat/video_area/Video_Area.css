@@ -1,0 +1,13 @@
+.call{
+    display: flex;
+    padding-top: 55px;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: center;
+    /* flex-basis: auto; */
+}
+.call > div{
+    margin: 5px;
+    border: solid 2px;
+    height: 100vh;
+}
