@@ -6,8 +6,7 @@ import ThemeToggler from './components/theme/ThemeToggler';
 function App() {
   return (
     <>
-      <ThemeToggler />
-      <Sidebar />
+    <h1>Dashboard</h1>
     </>
   );
 }

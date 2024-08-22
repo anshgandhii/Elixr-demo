@@ -7,6 +7,8 @@ import './index.css'; // Ensure Tailwind CSS is imported here
 import { store } from './app/store.js';
 import Blogs from './components/blogs/Blogs.jsx';
 import AddBlogs from './components/blogs/AddBlogs.jsx';
+import Sidebar from './components/chat/sidebar/Sidebar.jsx';
+import Chat1 from './components/chat/Chat1.jsx';
 
 const Root = () => {
   const currentTheme = useSelector((state) => state.theme.theme);
@@ -21,7 +23,8 @@ const Root = () => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path='/' element={<App />} />
+      <Route path='/' element={<App/>} />
+      <Route path='/chat' element={<Chat1/>} />
       <Route path='/blogs' element={<><AddBlogs /><Blogs /></>} />
     </>
   )
