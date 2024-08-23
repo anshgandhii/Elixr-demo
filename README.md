@@ -14,3 +14,5 @@ Currently, two official plugins are available:
 # npm i -D daisyui@latest
 
 # npm i react-router-dom
+
+# npm install react-icons

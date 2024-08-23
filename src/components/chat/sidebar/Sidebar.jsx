@@ -1,39 +1,37 @@
-import React, { useState } from "react";
-import { useSwipeable } from "react-swipeable";
-import "./Sidebar.css";
-import Video_Area from '../video_area/Video_Area';
-import Chat_area from "../chat_area/chat_area";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleSidebar } from '../../../features/chat/ChatSlice';
 
-export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handlers = useSwipeable({
-    onSwipedLeft: () => setIsOpen(false),
-    onSwipedRight: () => setIsOpen(true),
-    preventDefaultTouchmoveEvent: true,
-    trackMouse: true,
-  });
+const Sidebar = () => {
+  const isOpen = useSelector((state) => state.chat.sidebarOpen);
+  const dispatch = useDispatch();
 
   return (
-    <div className="container" {...handlers}>
-        <div className="sidebar">
-          <a href="#home" className="m-4">Home</a>
-          <a href="#services" className="m-4">Services</a>
-          <a href="#about" className="m-4">About</a>
-          <a href="#contact" className="m-4">Contact</a>
+    <div
+      className={`fixed inset-0 bg-opacity-75 transition-opacity ${
+        isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+      }`}
+      style={{ zIndex: 50 }}  // Ensures the overlay is above other elements
+    >
+      <div
+        className={`fixed top-0 left-0 w-64 h-full bg-white shadow-lg transform transition-transform ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+        style={{ zIndex: 60 }}  // Ensures the sidebar is above the overlay and other elements
+      >
+        <div className="p-4">
+          <button
+            className="p-2 rounded-full"
+            onClick={() => dispatch(toggleSidebar())}
+          >
+            ✕
+          </button>
+          <h2 className="text-lg font-semibold mt-4">Sidebar</h2>
+          {/* Add your sidebar content here */}
         </div>
-
-        <div className="video">
-          <Video_Area />
-        </div>
-
-        <div className="chat_area">
-          <Chat_area />
-        </div>
+      </div>
     </div>
   );
-}
+};
+
+export default Sidebar;
