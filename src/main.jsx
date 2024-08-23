@@ -8,7 +8,7 @@ import { store } from './app/store.js';
 import Blogs from './components/blogs/Blogs.jsx';
 import AddBlogs from './components/blogs/AddBlogs.jsx';
 import Sidebar from './components/chat/sidebar/Sidebar.jsx';
-import Chat1 from './components/chat/Chat1.jsx';
+import Chat1 from './components/chat/Chat.jsx';
 
 const Root = () => {
   const currentTheme = useSelector((state) => state.theme.theme);
