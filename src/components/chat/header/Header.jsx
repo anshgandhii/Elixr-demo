@@ -1,6 +1,6 @@
 // src/components/chat/Header.jsx
 import React, { useState } from 'react';
-import { FiPhoneCall, FiVideo, FiSun } from 'react-icons/fi';
+import { FiPhoneCall, FiSun } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../../../features/chat/ChatSlice';
 import ThemeToggler from '../../theme/ThemeToggler';
@@ -25,24 +25,21 @@ const Header = () => {
         <div className="h-10 w-10 rounded-full "></div>
         <div>
           <h2 className="text-lg font-semibold">Contact Name</h2>
-          <p className="text-sm text-gray-500">Online</p>
+          <p className="text-sm text-base">Online</p>
         </div>
       </div>
       <div className="flex space-x-4">
-        <button className="p-2 rounded-full text-xl text-gray-600">
+        <button className="p-2 rounded-full text-xl text-base">
           Skip
         </button>
         <button className="p-2 rounded-full">
-          <FiPhoneCall className="text-xl text-gray-600" />
-        </button>
-        <button className="p-2 rounded-full">
-          <FiVideo className="text-xl text-gray-600" />
+          <FiPhoneCall className="text-xl text-base" />
         </button>
         <button
           className="p-2 rounded-full relative"
           onClick={handleThemeIconClick}
         >
-          <FiSun className="text-xl text-gray-600" />
+          <FiSun className="text-xl text-base" />
         </button>
         {showThemeToggler && (
           <div className="absolute top-full right-0 mt-2">

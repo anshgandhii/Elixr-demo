@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ThemeToggler from '../theme/ThemeToggler';
 import { removeBlog } from '../../features/blogs/blogSlice';
+import { Link } from 'react-router-dom';
 
 const Blogs = () => {
   const blogs = useSelector((state) => state.blogs.blogs || []);
@@ -27,13 +28,11 @@ const Blogs = () => {
   return (
     <>
       <h1 className="text-4xl font-bold mb-8 text-center text-white">Blogs</h1>
-      <ThemeToggler />
       <div className="space-y-6 px-4 md:px-8">
         {blogs.map((blog) => (
           <section
             key={blog.id}
-            className={`p-6 border border-gray-200 hover:shadow-lg rounded-lg transition duration-300 ease-in-out transform hover:scale-105
-            }`}
+            className={`p-6 border border-gray-200 hover:shadow-lg rounded-lg transition duration-300 ease-in-out transform hover:scale-105`}
           >
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
               <div className="flex-shrink-0 mb-4 md:mb-0">
@@ -52,7 +51,10 @@ const Blogs = () => {
                 <p className="leading-relaxed">
                   {truncateText(blog.intro, 150)}
                 </p>
-                <a className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer hover:underline">
+                <Link
+                  to={`/blog/${blog.id}`}
+                  className="text-indigo-500 inline-flex items-center mt-4 cursor-pointer hover:underline"
+                >
                   Learn More
                   <svg
                     className="w-4 h-4 ml-2"
@@ -66,7 +68,7 @@ const Blogs = () => {
                     <path d="M5 12h14"></path>
                     <path d="M12 5l7 7-7 7"></path>
                   </svg>
-                </a>
+                </Link>
               </div>
               <div className="mt-4 md:mt-0 md:ml-auto flex items-center space-x-4">
                 <div

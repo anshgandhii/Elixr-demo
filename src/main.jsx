@@ -1,14 +1,16 @@
-// src/main.jsx
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider, useSelector } from 'react-redux';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 import App from './App.jsx';
-import './index.css'; // Ensure Tailwind CSS is imported here
+import './index.css';
 import { store } from './app/store.js';
 import Blogs from './components/blogs/Blogs.jsx';
 import AddBlogs from './components/blogs/AddBlogs.jsx';
 import Chat from './components/chat/Chat.jsx';
+import Layout from './components/Layout.jsx';
+import Home from './components/home/Home.jsx';
+import BlogPage from './components/blogs/BlogPage.jsx'; 
 
 const Root = () => {
   const currentTheme = useSelector((state) => state.theme.theme);
@@ -24,9 +26,13 @@ const Root = () => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<App />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/blogs" element={<><AddBlogs /><Blogs /></>} />
+        <Route path="/blog/:id" element={<BlogPage />} /> 
+      </Route>
       <Route path="/chat" element={<Chat />} />
-      <Route path="/blogs" element={<><AddBlogs /><Blogs /></>} />
     </>
   )
 );

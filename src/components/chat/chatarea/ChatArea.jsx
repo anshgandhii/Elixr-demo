@@ -18,13 +18,13 @@ const ChatArea = () => {
 
   return (
     <div className="flex items-center p-4 shadow">
-      <button className="p-2 bg-gray-200 rounded-full">
-        <AiOutlinePaperClip className="text-xl text-gray-600" />
+      <button className="p-2 bg-base rounded-full">
+        <AiOutlinePaperClip className="text-xl text-base" />
       </button>
       <input
         type="text"
         placeholder="Type a message"
-        className="flex-1 mx-4 p-2 rounded-full bg-gray-100 focus"
+        className="flex-1 mx-4 p-2 rounded-full bg-base focus"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
