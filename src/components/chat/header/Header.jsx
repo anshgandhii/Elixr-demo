@@ -35,9 +35,6 @@ const Header = () => {
         <button className="p-2 rounded-full">
           <FiPhoneCall className="text-xl text-gray-600" />
         </button>
-        <button className="p-2 rounded-full">
-          <FiVideo className="text-xl text-gray-600" />
-        </button>
         <button
           className="p-2 rounded-full relative"
           onClick={handleThemeIconClick}
