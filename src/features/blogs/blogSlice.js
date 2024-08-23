@@ -6,7 +6,8 @@ const initialState = {
             id: 1,
             title: "Hello World",
             intro: "dlkmsd",
-            img: "NULL",  
+            img: "NULL",
+            content:"",
         },
     ],
 };
