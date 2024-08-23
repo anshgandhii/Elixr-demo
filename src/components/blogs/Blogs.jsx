@@ -24,17 +24,6 @@ const Blogs = () => {
     return <p className="text-center text-gray-500">No blogs available.</p>;
   }
 
-  // Define theme-based classes for the card component
-  const themeCardClasses = {
-    light: 'bg-white text-gray-600',
-    dark: 'bg-gray-800 text-gray-200',
-    cupcake: 'bg-pink-200 text-pink-800',
-    retro: 'bg-yellow-200 text-yellow-800',
-    synthwave: 'bg-purple-800 text-pink-300',
-    valentine: 'bg-pink-300 text-red-700',
-    cyberpunk: 'bg-yellow-300 text-black',
-  };
-
   return (
     <>
       <h1 className="text-4xl font-bold mb-8 text-center text-white">Blogs</h1>
@@ -43,8 +32,7 @@ const Blogs = () => {
         {blogs.map((blog) => (
           <section
             key={blog.id}
-            className={`p-6 border border-gray-200 hover:shadow-lg rounded-lg transition duration-300 ease-in-out transform hover:scale-105 ${
-              themeCardClasses[theme]
+            className={`p-6 border border-gray-200 hover:shadow-lg rounded-lg transition duration-300 ease-in-out transform hover:scale-105
             }`}
           >
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
