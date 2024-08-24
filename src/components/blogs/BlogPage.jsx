@@ -9,15 +9,15 @@ const BlogPage = () => {
   const blog = blogs.find((blog) => blog.id === id);
 
   if (!blog) {
-    return <p className="text-center text-gray-500">Blog not found.</p>;
+    return <p className="text-center text-base">Blog not found.</p>;
   }
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <Link to="/" className="text-indigo-500 hover:underline mb-4 inline-block">
+      <Link to="../blogs" className="text-indigo-500 hover:underline mb-4 inline-block">
         Back to Blogs
       </Link>
-      <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      <div className="bg-base shadow-md rounded-lg overflow-hidden">
         {blog.img && (
           <img
             src={blog.img}
