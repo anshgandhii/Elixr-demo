@@ -33,7 +33,7 @@ const Sidebar = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/home"
+                  to="/"
                   className="block p-2 rounded hover:bg-base-200 text-base-800"
                   onClick={() => dispatch(toggleSidebar())}
                 >
