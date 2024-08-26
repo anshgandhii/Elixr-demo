@@ -27,10 +27,14 @@ const Navbar = () => {
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          <span className="ml-3 text-xl text-base">Elixr</span>
+          <Link
+                  to="/"
+                >
+                 <span className="ml-3 text-xl text-base">Elixr</span>
+          </Link>
         </a>
         <nav className="flex flex-wrap items-center text-base">
-          <Link to="/home" className="mr-5 text-base hover:text-gray-700">Home</Link>
+          <Link to="/" className="mr-5 text-base hover:text-gray-700">Home</Link>
           <Link to="/blogs" className="mr-5 text-base hover:text-gray-700">Blogs</Link>
           <Link to="/chat" className="mr-5 text-base hover:text-gray-700">Chat</Link>
         </nav>

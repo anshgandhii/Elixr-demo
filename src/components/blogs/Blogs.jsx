@@ -22,17 +22,17 @@ const Blogs = () => {
   };
 
   if (!blogs.length) {
-    return <p className="text-center text-gray-500">No blogs available.</p>;
+    return <p className="text-center text-base">No blogs available.</p>;
   }
 
   return (
     <>
-      <h1 className="text-4xl font-bold mb-8 text-center text-white">Blogs</h1>
+      <h1 className="text-4xl font-bold mb-8 text-center text-base">Blogs</h1>
       <div className="space-y-6 px-4 md:px-8">
         {blogs.map((blog) => (
           <section
             key={blog.id}
-            className={`p-6 border border-gray-200 hover:shadow-lg rounded-lg transition duration-300 ease-in-out transform hover:scale-105`}
+            className={`p-6 border border-base hover:shadow-lg rounded-lg transition duration-300 ease-in-out transform hover:scale-105`}
           >
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
               <div className="flex-shrink-0 mb-4 md:mb-0">

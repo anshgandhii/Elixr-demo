@@ -6,27 +6,23 @@ const Messages = () => {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    // Scroll to the bottom when messages change
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   }, [messages]);
 
   return (
-    <div className="flex-1 p-4 overflow-y-auto space-y-4">
+    <div className="flex-1 p-4 overflow-y-auto space-y-4 bg-base text-base">
       {messages.map((message, index) => (
         <div
           key={index}
           className={`chat ${message.sender === 'me' ? 'chat-end' : 'chat-start'}`}
         >
-          <div
-            className={`chat-bubble ${message.sender === 'me' ? 'bg-skyblue text-textWhite' : 'bg-white text-textBlack'}`}
-          >
+          <div className={`chat-bubble ${message.sender === 'me' ? 'bg-primary text-primary-content' : 'bg-base-content text-base-content'}`}>
             {message.content}
           </div>
         </div>
       ))}
-      {/* This div ensures the scrolling goes to the bottom */}
       <div ref={messagesEndRef} />
     </div>
   );

@@ -4,6 +4,7 @@ import { FiPhoneCall, FiSun } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar } from '../../../features/chat/ChatSlice';
 import ThemeToggler from '../../theme/ThemeToggler';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -32,8 +33,11 @@ const Header = () => {
         <button className="p-2 rounded-full text-xl text-base">
           Skip
         </button>
+
         <button className="p-2 rounded-full">
-          <FiPhoneCall className="text-xl text-base" />
+          <Link to="../video-chat">
+            <FiPhoneCall className="text-xl text-base" />
+          </Link>
         </button>
         <button
           className="p-2 rounded-full relative"

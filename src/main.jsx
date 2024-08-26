@@ -9,8 +9,8 @@ import Blogs from './components/blogs/Blogs.jsx';
 import AddBlogs from './components/blogs/AddBlogs.jsx';
 import Chat from './components/chat/Chat.jsx';
 import Layout from './components/Layout.jsx';
-import Home from './components/home/Home.jsx';
-import BlogPage from './components/blogs/BlogPage.jsx'; 
+import BlogPage from './components/blogs/BlogPage.jsx';
+import VideoChat from './components/videochat/VideoChat.jsx';
 
 const Root = () => {
   const currentTheme = useSelector((state) => state.theme.theme);
@@ -28,11 +28,11 @@ const router = createBrowserRouter(
     <>
       <Route path="/" element={<Layout />}>
         <Route index element={<App />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/blogs" element={<><AddBlogs /><Blogs /></>} />
-        <Route path="/blog/:id" element={<BlogPage />} /> 
+        <Route path="/blog/:id" element={<BlogPage />} />
       </Route>
-      <Route path="/chat" element={<Chat />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/video-chat" element={<VideoChat />} />
     </>
   )
 );

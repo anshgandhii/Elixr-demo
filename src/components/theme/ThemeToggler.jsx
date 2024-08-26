@@ -18,7 +18,10 @@ const ThemeToggler = () => {
   };
 
   return (
-    <div className='flex flex-col space-y-2 bg-white border rounded-lg shadow-md p-2'>
+    <div
+      className='fixed bottom-4 right-4 flex flex-col space-y-2 bg-white border rounded-lg shadow-md p-2'
+      style={{ zIndex: 2000 }} // Ensures the ThemeToggler is above all other elements
+    >
       {themes.map((theme) => (
         <button
           key={theme}
